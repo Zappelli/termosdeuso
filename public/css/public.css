@@ -2,7 +2,7 @@
 
 .not-logged {
   min-height: 100vh;
-  background-color: #f5f8fa;
+  background-size: cover;
 }
 
 .not-logged .box-login {
