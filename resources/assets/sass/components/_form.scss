@@ -1,5 +1,16 @@
 .form {
     &-control {
-        border-radius: 6px;
+        border-radius: 16px;
+        line-height: 32px;
+        border-top: 1px solid #444;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    &-label {
+
+    }
+    .align-center {
+        text-align: center;
     }
 }
