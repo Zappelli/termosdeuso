@@ -1,26 +1,20 @@
 <?php
 
-namespace Termos\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Termos\Http\Requests;
-use Termos\Contrato;
-use Termos\Clausula;
-use Termos\ClausulaCategoria;
+use App\Http\Requests;
+use App\Contrato;
+use App\Clausula;
+use App\ClausulaCategoria;
 
-use Illuminate\Support\Facades\Auth;
-use Termos\Http\Requests\ContratosRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ContratosRequest;
 
 class ContratosController extends Controller {
 
 	public function index()
 	{
-		//$user = Auth::user();
-
-		//if ($user->permission == 1) {
-			 $contratos = Contrato::all(); 
-		//} else {
-		//	$contratos = Contrato::where('user_id', $user->id); 
-		//}
+		$contratos = Contrato::all(); 
 
 		return view('contratos.index')->with('contratos', $contratos);
 	}
@@ -30,15 +24,11 @@ class ContratosController extends Controller {
 	public function adicionar_form()
 	{
 		$contrato = new Contrato;
-
 		$contrato->nome = 'Titulo do Contrato';
 		$contrato->descricao = '';
 		$contrato->clausulas = array();
-
 		$data_view = Clausula::relationship_all(); 
-
 		$action = action('ContratosController@adicionar');
-
 		return view('contratos.form')->with(array('action' => $action, 'contrato' => $contrato, 'data_view' => $data_view));
 	}
 
