@@ -13,5 +13,7 @@
 
 
 Auth::routes();
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'ContratosController@index')->name('Administração');
+
+Route::get('contratos/novo', 'ContratosController@adicionar_form');
 Route::resource('/contratos', 'ContratosController');

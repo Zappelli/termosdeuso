@@ -9,7 +9,7 @@ services:
       - '5432:5432'
     environment:
       POSTGRES_DB: termsofuser
-      POSTGRES_USER: root
+      POSTGRES_USER: terms
       POSTGRES_PASSWORD: 052912
 
   data_database:

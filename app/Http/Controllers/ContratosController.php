@@ -14,13 +14,13 @@ class ContratosController extends Controller {
 
 	public function index()
 	{
-		//$user = Auth::user();
+		$user = Auth::user();
 
-		//if ($user->permission == 1) {
-			 $contratos = Contrato::all(); 
-		//} else {
-		//	$contratos = Contrato::where('user_id', $user->id); 
-		//}
+		if ($user->permission == 1) {
+			$contratos = Contrato::all(); 
+		} else {
+			$contratos = Contrato::where('user_id', $user->id); 
+		}
 
 		return view('contratos.index')->with('contratos', $contratos);
 	}
@@ -37,7 +37,7 @@ class ContratosController extends Controller {
 
 		$data_view = Clausula::relationship_all(); 
 
-		$action = action('ContratosController@adicionar');
+		$action = action('ContratosController@create');
 
 		return view('contratos.form')->with(array('action' => $action, 'contrato' => $contrato, 'data_view' => $data_view));
 	}
@@ -46,7 +46,7 @@ class ContratosController extends Controller {
      * Action para adicionar uma novo Contrato
      * @return riderect ClausulasController@index
      */
-    public function adicionar(ContratosRequest $request)
+    public function create(ContratosRequest $request)
     {
         $clausulas = array();
 		foreach($request->input('clausulas') as $c)

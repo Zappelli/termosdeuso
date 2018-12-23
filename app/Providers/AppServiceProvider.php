@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Termos\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
