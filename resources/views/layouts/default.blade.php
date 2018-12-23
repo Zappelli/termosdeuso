@@ -32,59 +32,58 @@
 </head>
 <body>
 	<header class="header">
+		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container-fluid">
-				<div class="header-navbar">
-					<button type="button" class="button-menu">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="">
-					<div class="header-search">
-						<form>
-							<input type="search" name="s" placeholder="Buscar">
-							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
+				<div class='row'>
+					<span class='col-md-2'>
+						<a class="navbar-brand">Termos de Uso</a>
+					</span>
+					<form class="col-md-5">
+						<div class='form-inline'>
+							<input type="search" name="s" placeholder="Buscar" class="form-control input-search">
+							<button type="submit" class="btn btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</div>
+					</form>
+					<div class="user-infor pull-right col-md-2">
+						<ul class="nav navbar-nav">
+							<!-- Authentication Links -->
+							@if (Auth::guest())
+								<li><a href="{{ route('login') }}">Login</a></li>
+							@else
+								<li class="dropdown">
+
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+										<span class="icon">
+											<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+										</span>
+										<span class="user-name">{{ Auth::user()->name }} <i class="caret"></i></span>
+									</a>
+
+									<ul class="dropdown-menu" role="menu">
+										<li>
+											<a href="{{ route('logout') }}"
+												onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+												Logout
+											</a>
+
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												{{ csrf_field() }}
+											</form>
+										</li>
+									</ul>
+								</li>
+							@endif
+						</ul>
+						<!-- Single button -->
 					</div>
 				</div>
-				<div class="user-infor">
-					<ul class="nav navbar-nav">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                        @else
-                            <li class="dropdown">
-
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-									<span class="icon">
-										<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-									</span>
-									<span class="user-name">{{ Auth::user()->name }} <i class="caret"></i></span>
-								</a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-					<!-- Single button -->
-				</div>
 			</div>
+		</nav>
 	</header>
-
-	@yield('content')
+	<div class='container'>
+		@yield('content')
+	</div>
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

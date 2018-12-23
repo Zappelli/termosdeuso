@@ -1,0 +1,17 @@
+.header {
+    .user-infor {
+        .navbar-nav {
+            float: right;
+        }
+    }
+    .form-inline {
+        padding: 7px 0;
+        .input-search {
+            width: calc(100% - 50px);
+        }
+        .btn-search {
+            border-radius: 50%;
+        }
+    }
+}
+    

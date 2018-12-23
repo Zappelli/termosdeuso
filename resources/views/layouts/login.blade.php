@@ -24,7 +24,7 @@
     <header class="header">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', 'Termos de Uso') }}
             </a>
         </div>
     </header>
