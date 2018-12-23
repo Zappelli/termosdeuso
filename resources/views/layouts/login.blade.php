@@ -20,7 +20,7 @@
         ]) !!};
     </script>
 </head>
-<body class="not-logged">
+<body class="not-logged login-background">
     <header class="header">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -28,7 +28,7 @@
             </a>
         </div>
     </header>
-    <div id="app">
+    <div id="app" class="login-container">
         @yield('content')
     </div>
 
