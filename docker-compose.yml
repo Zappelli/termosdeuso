@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  postgres:
+    image: 'postgres:9.5'
+    volumes_from:
+      - data_database
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: termsofuser
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 052912
+
+  data_database:
+    image: cogniteev/echo
+    command: echo 'Data Container for Postgres'
+    volumes:
+      - /var/lib/postgresql/data
