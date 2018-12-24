@@ -8351,6 +8351,10 @@ button.close {
   margin-bottom: 20px;
 }
 
+.btn {
+  border-radius: 16px;
+}
+
 .btn-login {
   border-radius: 16px;
   line-height: 32px;
@@ -8362,6 +8366,10 @@ button.close {
   display: inline-block;
   border: 1px solid #e7e9ea;
   border-bottom: 2px solid #636b6f;
+}
+
+.btn.not-label {
+  margin-top: 22px;
 }
 
 .box {
@@ -8380,6 +8388,29 @@ button.close {
   margin-bottom: 15px;
 }
 
+.form .inline {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.form .inline.select-content {
+  width: 250px;
+}
+
+.form-section {
+  margin-bottom: 15px;
+}
+
+.form-section__legend p {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.form-section:last-of-type {
+  margin-bottom: 0;
+}
+
 .form-control {
   border-radius: 16px;
   line-height: 32px;
@@ -8391,20 +8422,48 @@ button.close {
           box-shadow: none;
 }
 
+.form-row {
+  margin-bottom: 15px;
+}
+
 .form-row label {
   font-weight: normal;
+}
+
+.form-orther__input {
+  width: 250px;
+  display: inline-block;
+}
+
+.form-orther__input > small {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .form .align-center {
   text-align: center;
 }
 
+.form .mark-content {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
 .form .mark-content__tag {
   display: inline-block;
   vertical-align: middle;
+  width: 20px;
 }
 
 .form .mark-content__tag input {
   position: static;
+  margin: 0;
+}
+
+.form .offset-left {
+  margin-left: 25px;
 }
 

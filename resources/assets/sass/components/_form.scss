@@ -1,4 +1,24 @@
 .form {
+    .inline {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        &.select-content{
+            width: 250px;
+        }
+    }
+    &-section{
+        margin-bottom: 15px;
+        &__legend {
+            p {
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
     &-control {
         border-radius: 16px;
         line-height: 32px;
@@ -8,23 +28,42 @@
         }
     }
     &-row{
+        margin-bottom: 15px;
         label {
             font-weight: normal;
         }
     }
     &-label {
-
+        
+    }
+    &-orther__input {
+        width: 250px;
+        display: inline-block;
+        > small {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
     }
     .align-center {
         text-align: center;
     }
     .mark-content {
+        margin-bottom: 0;
+        cursor: pointer;
         &__tag {
             display: inline-block;
             vertical-align: middle;
+            width: 20px;
             input {
                 position: static;
+                margin: 0;
             }
         }
+    }
+    .offset-left {
+        margin-left: 25px;
     }
 }

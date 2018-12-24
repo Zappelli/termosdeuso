@@ -1,128 +1,130 @@
-<div class="inner"> 
-    <div class="form-section form">
-        <div class="form-row">
-            <label class="mark-content inline">
-                <span class="mark-content__tag radio">
-                    <input type="radio" name="tipo_reservar">
-                    <span class="view"></span>
+<div class="inner">
+    <form class='form'>
+        <div class="form-section">
+            <div class="form-row">
+                <label class="mark-content inline">
+                    <span class="mark-content__tag radio">
+                        <input type="radio" name="_inicio[tipo]">
+                        <span class="view"></span>
+                    </span>
+                    <span class="inline" for="tipo_reserva_1">
+                        Este é um contrato de uma plataforma online de reserva de acomodações
+                    </span>
                 </span>
-                <span class="inline" for="tipo_reserva_1">
-                    Este é um contrato de uma plataforma online de reserva de acomodações
-                </span>
-            </span>
-        </div>
-        <div class="form-row">
-            <label class="mark-content inline">
-                <span class="mark-content__tag radio">
-                    <input type="radio" name="tipo_reservar">
-                    <span class="view"></span>
-                </span>
-                <span class="inline" for="tipo_reserva_1">
-                    Este é um contrato de uma acomodação temporária
-                </span>
-            </label>
-            <div class="select-content inline">
-                <select class="form-control select">
-                    <option selected>Selecione uma opção</option>
-                </select>
+            </div>
+            <div class="form-row">
+                <label class="mark-content inline">
+                    <span class="mark-content__tag radio">
+                        <input type="radio" name="_inicio[tipo]">
+                        <span class="view"></span>
+                    </span>
+                    <span class="inline" for="tipo_reserva_1">
+                        Este é um contrato de uma acomodação temporária
+                    </span>
+                </label>
+                <div class="select-content inline">
+                    <select class="form-control select" name='_inicio[tipo_hospedagem]'>
+                        <option selected>Selecione uma opção</option>
+                    </select>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-section">
-        <div class="form-section__legend">
-            <p>Utilizando os seguintes dispositivos:</p>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-row">
-                    <span class="mark-content">
-                        <span class="mark-content__tag checkbox">
-                            <input type="checkbox" name="tipo_reservar">
-                            <span class="view"></span>
-                        </span>
-                        <label class="inline">
-                            Site
-                        </label>
-                    </span>
-                </div>
-                <div class="form-row">
-                    <span class="mark-content">
-                        <span class="mark-content__tag checkbox">
-                            <input type="checkbox" name="tipo_reservar">
-                            <span class="view"></span>
-                        </span>
-                        <label class="inline">
-                            Aplicativo
-                        </label>
-                    </span>
-                </div>
+        <div class="form-section">
+            <div class="form-section__legend">
+                <p>Utilizando os seguintes dispositivos:</p>
             </div>
-            <div class="col-md-3">
-                <div class="form-row">
-                    <span class="mark-content">
-                        <span class="mark-content__tag checkbox">
-                            <input type="checkbox" name="tipo_reservar">
-                            <span class="view"></span>
-                        </span>
-                        <label class="inline">
-                            Telefone
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-row">
+                        <label class="mark-content">
+                            <span class="mark-content__tag checkbox">
+                                <input type="checkbox" name="_inicio[dispositivos][site]">
+                                <span class="view"></span>
+                            </span>
+                            <span class="inline">
+                                Site
+                            </span>
                         </label>
-                    </span>
+                    </div>
+                    <div class="form-row">
+                        <label class="mark-content">
+                            <span class="mark-content__tag checkbox">
+                                <input type="checkbox" name="_inicio[dispositivos][aplicativo]">
+                                <span class="view"></span>
+                            </span>
+                            <span class="inline">
+                                Aplicativo
+                            </span>
+                        </label>
+                    </div>
                 </div>
-                <div class="form-row">
-                    <span class="mark-content">
-                        <span class="mark-content__tag checkbox">
-                            <input type="checkbox" name="tipo_reservar">
-                            <span class="view"></span>
-                        </span>
-                        <label class="inline">
-                            E-mail
+                <div class="col-md-3">
+                    <div class="form-row">
+                        <label class="mark-content">
+                            <span class="mark-content__tag checkbox">
+                                <input type="checkbox" name="_inicio[dispositivos][telefone]">
+                                <span class="view"></span>
+                            </span>
+                            <span class="inline">
+                                Telefone
+                            </span>
                         </label>
-                    </span>
+                    </div>
+                    <div class="form-row">
+                        <label class="mark-content">
+                            <span class="mark-content__tag checkbox">
+                                <input type="checkbox" name="_inicio[dispositivos][email]">
+                                <span class="view"></span>
+                            </span>
+                            <span class="inline">
+                                E-mail
+                            </span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-row">
-                    <span class="mark-content mark-content_orther inline">
-                        <span class="mark-content__tag checkbox">
-                            <input type="checkbox" name="tipo_reservar">
-                            <span class="view"></span>
+                <div class="col-md-4">
+                    <div class="form-row">
+                        <span class="mark-content mark-content_orther inline">
+                            <span class="mark-content__tag checkbox">
+                                <input type="checkbox" name="_inicio[dispositivos][has_outros]">
+                                <span class="view"></span>
+                            </span>
+                            <label>
+                                Outros:
+                            </label>
                         </span>
-                        <label>
-                            Outros:
-                        </label>
-                    </span>
-                    <div class="inline form-orther">
-                        <span class="form-orther__input">
-                            <input type="text" name="tipo_reservar" class="form-control">
-                            <small>seperar dispositivos por virgulas</small>
-                        </span>
+                        <div class="inline form-orther">
+                            <span class="form-orther__input">
+                                <input type="text" name="_inicio[dispositivos][outros]" class="form-control">
+                                <small>seperar dispositivos por virgulas</small>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-row">
-            <label class="inline">
-                Será permitido o uso comercial?
-            </label>
-            <span class="mark-content inline">
-                <span class="mark-content__tag radio">
-                    <input type="radio" name="uso_comercia__s">
-                    <span class="view"></span>
-                </span>
-                <label class="inline" for="uso_comercia__s">
-                    Sim
+            <div class="form-row">
+                <label class="inline">
+                    Será permitido o uso comercial?
                 </label>
-            </span>
-            <span class="mark-content inline">
-                <span class="mark-content__tag radio">
-                    <input type="radio" name="uso_comercia__n">
-                    <span class="view"></span>
-                </span>
-                <label class="inline" for="uso_comercia__n">
-                    Não
+                <label class="mark-content inline offset-left">
+                    <span class="mark-content__tag radio">
+                        <input type="radio" name="_inicio[uso_comercial]" value='1'>
+                        <span class="view"></span>
+                    </span>
+                    <span class="inline" for="uso_comercia__s">
+                        Sim
+                    </span>
                 </label>
-            </span>
+                <label class="mark-content inline offset-left">
+                    <span class="mark-content__tag radio">
+                        <input type="radio" name="_inicio[uso_comercial]" value='0'>
+                        <span class="view"></span>
+                    </span>
+                    <span class="inline" for="uso_comercia__n">
+                        Não
+                    </span>
+                </label>
+            </div>
         </div>
-    </div>
+    </form>
 </div>

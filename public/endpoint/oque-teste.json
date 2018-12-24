@@ -1,0 +1,22 @@
+{
+    'web-app': {
+        'itens':[
+            {
+                'key': 'tipo_quarto',
+                'label': 'Tipo de Quarto'
+            },
+            {
+                'key': 'adultos',
+                'label': 'Adultos'
+            },
+            {
+                'key': 'criancas',
+                'label': 'Crianças'
+            },
+            {
+                'key': 'politica_fumante',
+                'label': 'Política de Fumante'
+            }
+        ]
+    }
+}
