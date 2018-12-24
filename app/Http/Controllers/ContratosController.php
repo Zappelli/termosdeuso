@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Auth;
 use Termos\Http\Requests\ContratosRequest;
 
 class ContratosController extends Controller {
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	public function index()
 	{

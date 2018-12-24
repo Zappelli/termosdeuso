@@ -1,26 +1,26 @@
 <div class="inner"> 
-    <div class="form-section">
+    <div class="form-section form">
         <div class="form-row">
-            <span class="mark-content inline">
+            <label class="mark-content inline">
                 <span class="mark-content__tag radio">
                     <input type="radio" name="tipo_reservar">
                     <span class="view"></span>
                 </span>
-                <label class="inline" for="tipo_reserva_1">
+                <span class="inline" for="tipo_reserva_1">
                     Este é um contrato de uma plataforma online de reserva de acomodações
-                </label>
+                </span>
             </span>
         </div>
         <div class="form-row">
-            <span class="mark-content inline">
+            <label class="mark-content inline">
                 <span class="mark-content__tag radio">
                     <input type="radio" name="tipo_reservar">
                     <span class="view"></span>
                 </span>
-                <label class="inline" for="tipo_reserva_1">
+                <span class="inline" for="tipo_reserva_1">
                     Este é um contrato de uma acomodação temporária
-                </label>
-            </span>
+                </span>
+            </label>
             <div class="select-content inline">
                 <select class="form-control select">
                     <option selected>Selecione uma opção</option>

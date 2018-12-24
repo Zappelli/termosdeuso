@@ -8391,7 +8391,20 @@ button.close {
           box-shadow: none;
 }
 
+.form-row label {
+  font-weight: normal;
+}
+
 .form .align-center {
   text-align: center;
+}
+
+.form .mark-content__tag {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form .mark-content__tag input {
+  position: static;
 }
 

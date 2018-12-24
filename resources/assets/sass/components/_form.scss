@@ -7,10 +7,24 @@
             box-shadow: none;
         }
     }
+    &-row{
+        label {
+            font-weight: normal;
+        }
+    }
     &-label {
 
     }
     .align-center {
         text-align: center;
+    }
+    .mark-content {
+        &__tag {
+            display: inline-block;
+            vertical-align: middle;
+            input {
+                position: static;
+            }
+        }
     }
 }

@@ -8373,8 +8373,21 @@ button.close {
           box-shadow: none;
 }
 
+.form-row label {
+  font-weight: normal;
+}
+
 .form .align-center {
   text-align: center;
+}
+
+.form .mark-content__tag {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form .mark-content__tag input {
+  position: static;
 }
 
 .header .user-infor .navbar-nav {
@@ -8391,5 +8404,56 @@ button.close {
 
 .header .form-inline .btn-search {
   border-radius: 50%;
+}
+
+.accordion-painel {
+  background-color: #FFF;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.1);
+          box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.1);
+  border: solid 1px #eff1f9;
+  border-radius: 18px;
+}
+
+.accordion-header {
+  text-align: center;
+  color: #636b6f;
+  text-transform: uppercase;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 36px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #e7e9ea;
+}
+
+.accordion-content {
+  padding: 2em 3em 2em 2.5em;
+}
+
+.contrato-item--content {
+  display: block;
+  border-radius: 6px;
+  min-height: 60px;
+  color: #636b6f;
+  text-align: center;
+  background-color: #FFF;
+  padding: 2em 3em 2em 2.5em;
+  -webkit-box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.1);
+          box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.1);
+  border: solid 1px #eff1f9;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.contrato-item--content::before {
+  background-image: linear-gradient(184deg, #06e9d8, #45c1ff);
+}
+
+.contrato-item--content:hover {
+  text-decoration: none;
+  -webkit-box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.3);
+          box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.3);
 }
 
