@@ -8,7 +8,7 @@
                 <div class="form-row">
                     <label class="inline">Nome da Propriedade:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][nome]'>
                     </span>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="form-row">
                     <label class="inline">Razão Social:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][razao_social]'>
                     </span>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="form-row">
                     <label class="inline">Endereço:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][endereco]'>
                     </span>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="form-row">
                     <label class="inline">Complemento:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][complemeto]'>
                     </span>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="form-row">
                     <label class="inline">País:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][pais]'>
                     </span>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 <div class="form-row">
                     <label class="inline">Cidade:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][cidade]'>
                     </span>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="form-row">
                     <label class="inline">Codigo Postal:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][cep]'>
                     </span>
                 </div>
             </div>
@@ -69,56 +69,44 @@
             <div class="col-md-12">
                 <div class="form-row">
                     <label class="inline phone-label">Telefone:</label>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control" placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888">
-                    </span>
+                    <div class='row'>
+                        <span class="col-md-4 inline phone-input">
+                            <input type="text" class="form-control" placeholder="+55 (21) 8 8888-8888" name='_quem[contratado][telefone][0]'>
+                        </span>
+                        <span class="col-md-4 inline phone-input">
+                            <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888" name='_quem[contratado][telefone][1]'>
+                        </span>
+                        <span class="col-md-4  inline phone-input">
+                            <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888" name='_quem[contratado][telefone][2]'>
+                        </span>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="form-row">
                     <label class="inline phone-label">Celular:</label>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control" placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888">
-                    </span>
+                    <div class='row'>
+                        <span class="col-md-4 inline phone-input">
+                            <input type="text" class="form-control" placeholder="+55 (21) 8 8888-8888" name='_quem[contratado][celular][0]'>
+                        </span>
+                        <span class="col-md-4 inline phone-input">
+                            <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888" name='_quem[contratado][celular][1]'>
+                        </span>
+                        <span class="col-md-4 inline phone-input">
+                            <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888" name='_quem[contratado][celular][2]'>
+                        </span>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-12">
-                <div class="form-row">
-                    <label class="inline phone-label">Fax:</label>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control" placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                    <span class="inline phone-input">
-                        <input type="text" class="form-control " placeholder="+55 (21) 8 8888-8888">
-                    </span>
-                </div>
-            </div>
-
         </div>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
-                    <label class="inline">Responsável:</label>
+                    <label class="inline">Gerente:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][gerente]'>
                     </span>
                 </div>
             </div>
@@ -129,7 +117,7 @@
                 <div class="form-row">
                     <label class="inline">Site:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][site]'>
                     </span>
                 </div>
             </div>
@@ -137,7 +125,7 @@
                 <div class="form-row">
                     <label class="inline">E-mail:</label>
                     <span class="input-content inline">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name='_quem[contratado][email]'>
                     </span>
                 </div>
             </div>
@@ -152,7 +140,7 @@
                         <div class="form-row">
                             <label class="inline">Nome do Registro:</label>
                             <span class="input-content inline">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name='_quem[contratado][documento][0][nome]'>
                             </span>
                         </div>
                     </div>
@@ -160,7 +148,7 @@
                         <div class="form-row">
                             <label class="inline">Registro:</label>
                             <span class="input-content inline">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control"  name='_quem[contratado][documento][0][registro]'>
                             </span>
                         </div>
                     </div>
@@ -168,7 +156,7 @@
                         <div class="form-row">
                             <label class="inline">Número/Código:</label>
                             <span class="input-content inline">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name='_quem[contratado][documento][0][numero]'>
                             </span>
                         </div>
                     </div>

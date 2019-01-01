@@ -2,6 +2,12 @@
     <form class='form'>
         <div class="form-section">
             <div class="form-row">
+                <label>
+                    Nome do Contrato:
+                </label>
+                <input class='form-control' type="text" name="_inicio[nome]">
+            </div>
+            <div class="form-row">
                 <label class="mark-content inline">
                     <span class="mark-content__tag radio">
                         <input type="radio" name="_inicio[tipo]">
@@ -125,6 +131,9 @@
                     </span>
                 </label>
             </div>
+        </div>
+        <div class='btn-container'>
+            <button type='button'>Salvar Alterações</button>
         </div>
     </form>
 </div>
