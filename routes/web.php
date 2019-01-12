@@ -15,7 +15,10 @@
 Auth::routes();
 Route::get('/', 'ContratosController@index')->name('Administração');
 Route::get('contratos/novo', 'ContratosController@adicionar_form');
+Route::post('contratos/salvar', 'ContratosController@to_choose');
 Route::resource('/contratos', 'ContratosController');
+
+
 
 //ContratosPublicos
 Route::get('contrato/{token_id}/', 'SiteController@index');

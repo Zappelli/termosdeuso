@@ -29,8 +29,7 @@ class ContratosRequest extends FormRequest
     public function rules()
 	{
 		return [
-			'nome' => 'required',
-			'clausulas' => 'required'
+			'nome' => 'required'
 		];
 	}
 
@@ -42,8 +41,7 @@ class ContratosRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'nome.required' => '<b>Nome</b> é obrigatório',
-			'clausulas.required' => '<b>Clausulas</b> é obrigatório',
+			'nome.required' => '<b>Nome</b> é obrigatório'
 		];
 	}
 }

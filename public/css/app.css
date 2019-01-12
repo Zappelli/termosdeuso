@@ -8335,6 +8335,7 @@ button.close {
 
 .btn {
   border-radius: 16px;
+  display: inline-block;
 }
 
 .btn-login {
@@ -8352,6 +8353,10 @@ button.close {
 
 .btn.not-label {
   margin-top: 22px;
+}
+
+.btn-primary {
+  width: 100%;
 }
 
 .box {

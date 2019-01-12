@@ -41,9 +41,15 @@ class ContratosController extends Controller {
 
 		$data_view = Clausula::relationship_all(); 
 
-		$action = action('ContratosController@create');
+		$action = action('ContratosController@to_choose');
 
 		return view('contratos.form')->with(array('action' => $action, 'contrato' => $contrato, 'data_view' => $data_view));
+	}
+
+	public function to_choose(ContratosRequest $request) {
+		if ($request->input('type') == 'inicio') {
+			return $this->create($request);
+		}
 	}
 
 	/** 
@@ -52,23 +58,23 @@ class ContratosController extends Controller {
      */
     public function create(ContratosRequest $request)
     {
-        $clausulas = array();
-		foreach($request->input('clausulas') as $c)
-		{
-			$clausulas[] = intval($c);
-		}
 
 		$contrato = new Contrato;
 
 		$contrato->nome = $request->input('nome');
 		$contrato->descricao = '';
 		$contrato->user_id = Auth::id();
-		$contrato->clausulas = json_encode($clausulas);
+
+		$contrato->_inicio()->tipo = $request->input('tipo_hospedagem');
+		$contrato->_inicio()->tipo_hospedagem = $request->input('tipo_hospedagem');
+		$contrato->_inicio()->dispositivos = json_encode($request->input('dispositivos'));
+		$contrato->_inicio()->uso_comercial = $request->input('uso_comercial');
 
 		$contrato->save();
-
-        $msg = 'Contrato <b>' . $request->input('nome') . '</b> adicionada com sucesso';
-        return redirect()->action('ContratosController@index')->with(array('mensagem' => $msg, 'class' => 'success'));
+		if (!empty( $contrato->id))
+			return Response::json(array('success' => true, 'contrato_id' => $contrato->id), 200);
+		else
+		return Response::json(array('success' => false, 'contrato_id' => 0), 500);
     }
 
     /**

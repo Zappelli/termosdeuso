@@ -19,11 +19,12 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-	<script src="//use.fontawesome.com/b70afb10f4.js"></script>
+	<script type='text/javascript' src="//use.fontawesome.com/b70afb10f4.js"></script>
+	
 
 
     <!-- Scripts -->
-    <script>
+    <script type='text/javascript'>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
@@ -86,8 +87,9 @@
 	</div>
 
 	<!-- Scripts -->
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type='text/javascript' src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/app.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/js/common.js" charset="utf-8"></script>
 	@yield('scripts')
 </body>

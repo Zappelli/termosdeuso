@@ -1,16 +1,18 @@
 <div class="inner">
-    <form class='form'>
+    <form role="form" class='form form-contrato' method='post'  action="{{ $action }}" data-partial='_inicio'>
+        {{ csrf_field() }}
         <div class="form-section">
             <div class="form-row">
                 <label>
                     Nome do Contrato:
                 </label>
-                <input class='form-control' type="text" name="_inicio[nome]">
+                <input class='form-control' type="text" name="_nome">
+                <input type='hidden' name="id" value='{{ 0 }}'>
             </div>
             <div class="form-row">
                 <label class="mark-content inline">
                     <span class="mark-content__tag radio">
-                        <input type="radio" name="_inicio[tipo]">
+                        <input type="radio" name="tipo">
                         <span class="view"></span>
                     </span>
                     <span class="inline" for="tipo_reserva_1">
@@ -21,7 +23,7 @@
             <div class="form-row">
                 <label class="mark-content inline">
                     <span class="mark-content__tag radio">
-                        <input type="radio" name="_inicio[tipo]">
+                        <input type="radio" name="tipo">
                         <span class="view"></span>
                     </span>
                     <span class="inline" for="tipo_reserva_1">
@@ -29,8 +31,10 @@
                     </span>
                 </label>
                 <div class="select-content inline">
-                    <select class="form-control select" name='_inicio[tipo_hospedagem]'>
-                        <option selected>Selecione uma opção</option>
+                    <select class="form-control select" name='tipo_hospedagem'>
+                        <option selected disabled>Selecione uma opção</option>
+                        <option value='1'>Tipo 1</option>
+                        <option value='2'>Tipo 2</option>
                     </select>
                 </div>
             </div>
@@ -44,7 +48,7 @@
                     <div class="form-row">
                         <label class="mark-content">
                             <span class="mark-content__tag checkbox">
-                                <input type="checkbox" name="_inicio[dispositivos][site]">
+                                <input type="checkbox" name="dispositivos[site]">
                                 <span class="view"></span>
                             </span>
                             <span class="inline">
@@ -55,7 +59,7 @@
                     <div class="form-row">
                         <label class="mark-content">
                             <span class="mark-content__tag checkbox">
-                                <input type="checkbox" name="_inicio[dispositivos][aplicativo]">
+                                <input type="checkbox" name="dispositivos[aplicativo]">
                                 <span class="view"></span>
                             </span>
                             <span class="inline">
@@ -68,7 +72,7 @@
                     <div class="form-row">
                         <label class="mark-content">
                             <span class="mark-content__tag checkbox">
-                                <input type="checkbox" name="_inicio[dispositivos][telefone]">
+                                <input type="checkbox" name="dispositivos[telefone]">
                                 <span class="view"></span>
                             </span>
                             <span class="inline">
@@ -79,7 +83,7 @@
                     <div class="form-row">
                         <label class="mark-content">
                             <span class="mark-content__tag checkbox">
-                                <input type="checkbox" name="_inicio[dispositivos][email]">
+                                <input type="checkbox" name="dispositivos[email]">
                                 <span class="view"></span>
                             </span>
                             <span class="inline">
@@ -92,7 +96,7 @@
                     <div class="form-row">
                         <span class="mark-content mark-content_orther inline">
                             <span class="mark-content__tag checkbox">
-                                <input type="checkbox" name="_inicio[dispositivos][has_outros]">
+                                <input type="checkbox" name="dispositivos[has_outros]">
                                 <span class="view"></span>
                             </span>
                             <label>
@@ -101,7 +105,7 @@
                         </span>
                         <div class="inline form-orther">
                             <span class="form-orther__input">
-                                <input type="text" name="_inicio[dispositivos][outros]" class="form-control">
+                                <input type="text" name="dispositivos[outros]" class="form-control">
                                 <small>seperar dispositivos por virgulas</small>
                             </span>
                         </div>
@@ -114,7 +118,7 @@
                 </label>
                 <label class="mark-content inline offset-left">
                     <span class="mark-content__tag radio">
-                        <input type="radio" name="_inicio[uso_comercial]" value='1'>
+                        <input type="radio" name="uso_comercial" value='1'>
                         <span class="view"></span>
                     </span>
                     <span class="inline" for="uso_comercia__s">
@@ -123,7 +127,7 @@
                 </label>
                 <label class="mark-content inline offset-left">
                     <span class="mark-content__tag radio">
-                        <input type="radio" name="_inicio[uso_comercial]" value='0'>
+                        <input type="radio" name="uso_comercial" value='0'>
                         <span class="view"></span>
                     </span>
                     <span class="inline" for="uso_comercia__n">
@@ -131,9 +135,11 @@
                     </span>
                 </label>
             </div>
-        </div>
-        <div class='btn-container'>
-            <button type='button'>Salvar Alterações</button>
+        </div> 
+        <div class='row'>
+            <div class='col-md-3 pull-right'>
+                <button type='submit' class='btn btn-primary'>Salvar Alterações</button>
+            </div>
         </div>
     </form>
 </div>
