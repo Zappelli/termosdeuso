@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
+    protected $layout = 'layouts.public';
+
     public function index()
     {
-        return view('home');
+        return view('site.index');
     }
 }

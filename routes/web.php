@@ -21,4 +21,4 @@ Route::resource('/contratos', 'ContratosController');
 
 
 //ContratosPublicos
-Route::get('contrato/{token_id}/', 'SiteController@index');
+Route::get('contrato/{token_id}', 'SiteController@index');
