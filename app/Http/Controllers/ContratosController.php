@@ -2,13 +2,12 @@
 
 namespace Termos\Http\Controllers;
 
-use Termos\Http\Requests;
 use Termos\Contrato;
 use Termos\Clausula;
 use Termos\ClausulaCategoria;
 
 use Illuminate\Support\Facades\Auth;
-use Termos\Http\Requests\ContratosRequest;
+use Illuminate\Http\Request;
 
 class ContratosController extends Controller {
 	public function __construct()
@@ -46,8 +45,10 @@ class ContratosController extends Controller {
 		return view('contratos.form')->with(array('action' => $action, 'contrato' => $contrato, 'data_view' => $data_view));
 	}
 
-	public function to_choose(ContratosRequest $request) {
+	public function to_choose(Request $request) {
+
 		if ($request->input('type') == 'inicio') {
+			var_dump($request->input('type'));
 			return $this->create($request);
 		}
 	}
@@ -56,7 +57,7 @@ class ContratosController extends Controller {
      * Action para adicionar uma novo Contrato
      * @return riderect ClausulasController@index
      */
-    public function create(ContratosRequest $request)
+    public function create(Request $request)
     {
 
 		$contrato = new Contrato;
@@ -65,17 +66,21 @@ class ContratosController extends Controller {
 		$contrato->descricao = '';
 		$contrato->user_id = Auth::id();
 
-		$contrato->_inicio()->tipo = $request->input('tipo_hospedagem');
+		$contrato->_inicio()->tipo = $request->input('tipo');
 		$contrato->_inicio()->tipo_hospedagem = $request->input('tipo_hospedagem');
 		$contrato->_inicio()->dispositivos = json_encode($request->input('dispositivos'));
 		$contrato->_inicio()->uso_comercial = $request->input('uso_comercial');
 
 		$contrato->save();
-		if (!empty( $contrato->id))
-			return Response::json(array('success' => true, 'contrato_id' => $contrato->id), 200);
-		else
-		return Response::json(array('success' => false, 'contrato_id' => 0), 500);
-    }
+
+		var_dump($contrato);
+
+		if (!empty($contrato->id)) {
+			return Response::json(array('success' => true, 'contrato' => $contrato), 200);
+		}else{
+			return Response::json(array('success' => false, 'contrato' => $contrato), 500);
+		}
+	}
 
     /**
 	 * Editar uma Contrato
@@ -104,7 +109,7 @@ class ContratosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function atualizar($id, ContratosRequest $request)
+	public function atualizar($id, Request $request)
 	{
 		$clausula = Contrato::find($id);
         $clausula->fill($request->all())->save();

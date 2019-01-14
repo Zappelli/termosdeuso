@@ -6,7 +6,6 @@ var AJAX = AJAX || {};
         $( "form.form-contrato" ).on( "submit", function( event ) {
             event.preventDefault();
             var $_form = $(this);
-            var __type = $_form.attr('data-partial');
             var __action = $_form.attr('action');
             var __attributes = $_form.serializeArray();
             var __data = {};
@@ -14,10 +13,6 @@ var AJAX = AJAX || {};
             $.each(__attributes, function(i, field) {
                 __data[field.name] = field.value
             });
-            
-            __data.type = __type;
-
-            console.log('DATA', __data);
 
             $.ajax({
                 url: __action,
@@ -26,13 +21,22 @@ var AJAX = AJAX || {};
                 dataType: 'JSON',
                 beforeSend: function () {
                     $_form.addClass('loading');
-                }
+                },
+                success: function(data) {
+                    console.log(data);
+                    toastr.success('Informação salva com sucesso');
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    console.log(jqXHR);
+                    toastr.error('Houve um erro ao tentar salvar');
+                },
             })
         });
     };
     
     AJAX.init = function() {
-        AJAX.submit();
+        console.log('+init');
+        //AJAX.submit();
     };
 
 })(jQuery, document, window);

@@ -1,13 +1,15 @@
 <div class="inner">
-    <form role="form" class='form form-contrato' method='post'  action="{{ $action }}" data-partial='_inicio'>
+    <form role="form" class='form form-contrato' method='post'  action="{{ $action }}">
         {{ csrf_field() }}
+        <input type='hidden' name="id" value='{{ 0 }}'>
+        <input type='hidden' name="type" value='inicio'>
         <div class="form-section">
             <div class="form-row">
                 <label>
                     Nome do Contrato:
                 </label>
-                <input class='form-control' type="text" name="_nome">
-                <input type='hidden' name="id" value='{{ 0 }}'>
+                <input class='form-control' type="text" name="nome">
+                
             </div>
             <div class="form-row">
                 <label class="mark-content inline">

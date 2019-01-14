@@ -137,7 +137,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -167,16 +166,15 @@ return [
         /*
          * Package Service Providers...
          */
+    
 
         /*
          * Application Service Providers...
          */
         Termos\Providers\AppServiceProvider::class,
         Termos\Providers\AuthServiceProvider::class,
-        // Termos\Providers\BroadcastServiceProvider::class,
         Termos\Providers\EventServiceProvider::class,
-        Termos\Providers\RouteServiceProvider::class,
-
+        Termos\Providers\RouteServiceProvider::class
     ],
 
     /*

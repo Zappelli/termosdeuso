@@ -13,6 +13,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/import.css') }}" rel="stylesheet">
+	@toastr_css
 
 	@yield('head')
 
@@ -87,8 +88,10 @@
 	</div>
 
 	<!-- Scripts -->
+    
 	<script type='text/javascript' src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	@toastr_js
 	<script type="text/javascript" src="/js/app.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/js/common.js" charset="utf-8"></script>
 	@yield('scripts')
