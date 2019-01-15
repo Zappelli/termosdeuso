@@ -7,9 +7,11 @@ use Termos\Clausula;
 use Termos\ClausulaCategoria;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
 
 class ContratosController extends Controller {
+
 	public function __construct()
 	{
 		$this->middleware('auth');
@@ -46,9 +48,7 @@ class ContratosController extends Controller {
 	}
 
 	public function to_choose(Request $request) {
-
 		if ($request->input('type') == 'inicio') {
-			var_dump($request->input('type'));
 			return $this->create($request);
 		}
 	}
@@ -64,16 +64,15 @@ class ContratosController extends Controller {
 
 		$contrato->nome = $request->input('nome');
 		$contrato->descricao = '';
-		$contrato->user_id = Auth::id();
+		$contrato->clausulas = json_encode('[]');
+		$contrato->user_id = Auth::user()->id;
 
-		$contrato->_inicio()->tipo = $request->input('tipo');
-		$contrato->_inicio()->tipo_hospedagem = $request->input('tipo_hospedagem');
-		$contrato->_inicio()->dispositivos = json_encode($request->input('dispositivos'));
-		$contrato->_inicio()->uso_comercial = $request->input('uso_comercial');
+		//$contrato->_inicio()->tipo = $request->input('tipo');
+		//$contrato->_inicio()->tipo_hospedagem = $request->input('tipo_hospedagem');
+		//$contrato->_inicio()->dispositivos = json_encode($request->input('dispositivos'));
+		//$contrato->_inicio()->uso_comercial = $request->input('uso_comercial');
 
 		$contrato->save();
-
-		var_dump($contrato);
 
 		if (!empty($contrato->id)) {
 			return Response::json(array('success' => true, 'contrato' => $contrato), 200);
@@ -87,7 +86,7 @@ class ContratosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function editar($id)
+	public function edit($id)
 	{
 		$contrato = new Contrato;
 		
@@ -122,12 +121,14 @@ class ContratosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function remover($id)
+	public function destroy($id)
 	{
-		$clausula = Clausula::find($id);
-        $clausula->delete();
-        $msg = 'Clausula <b>Removida</b> com sucesso!';
-        return redirect()->action('ClausulasController@index')->with(array('mensagem' => $msg, 'class' => 'info'));
+		$contrato = Contrato::find($id);
+		if ($contrato->delete()) {
+			return Response::json(array('success' => true, 'msg' => $msg), 200);
+		}else{
+			return Response::json(array('success' => false, 'msg' => $contrato), 500);
+		}
 	}
 
 }

@@ -33,10 +33,10 @@
                                 </span>
                             </div>
                             <div class="clausulas-item--header_action">
-                                <a class="action-deletar" href="{{ action('ContratosController@remover', $contrato->id ) }}" data-id="{{ $contrato->id }}">
+                                <a class="action-deletar" href="{{ action('ContratosController@destroy', $contrato->id ) }}" data-token="{{ csrf_token() }}">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </a>
-                                <a class="action-editar" href="{{ action('ContratosController@editar', $contrato->id ) }}" data-id="{{ $contrato->id }}">
+                                <a class="action-editar" href="{{ action('ContratosController@edit', $contrato->id ) }}" data-id="{{ $contrato->id }}">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
                             </div>

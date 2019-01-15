@@ -23,20 +23,42 @@ var AJAX = AJAX || {};
                     $_form.addClass('loading');
                 },
                 success: function(data) {
-                    console.log(data);
                     toastr.success('Informação salva com sucesso');
                 },
                 error: function(jqXHR, textStatus, errorThrown){
-                    console.log(jqXHR);
                     toastr.error('Houve um erro ao tentar salvar');
                 },
-            })
+            });
+        });
+    };
+
+    AJAX.delete = function () {
+        $('.action-deletar').on('click', function(event) {
+            event.preventDefault();
+            var __action = $(this).attr('href');
+            $.ajax({
+                url: __action,
+                type: 'DELETE',
+                dataType: 'JSON',
+                beforeSend: function () {
+                    $(this).closest('.contrato-item').addClass('loading');
+                },
+                success: function(data) {
+                    console.log(data);
+                    toastr.success('Informação Apagada com sucesso');
+                    $(this).closest('.contrato-item').parent().remove();
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    toastr.error('Houve um erro ao tentar Remover o contrato');
+                },
+            });
         });
     };
     
     AJAX.init = function() {
         console.log('+init');
-        //AJAX.submit();
+        AJAX.submit();
+        AJAX.delete();
     };
 
 })(jQuery, document, window);
