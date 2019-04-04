@@ -9,6 +9,7 @@ var AJAX = AJAX || {};
             var __action = $_form.attr('action');
             var __attributes = $_form.serializeArray();
             var __data = {};
+            var __next = $_form.attr('data-next');
 
             $.each(__attributes, function(i, field) {
                 __data[field.name] = field.value
@@ -23,7 +24,10 @@ var AJAX = AJAX || {};
                     $_form.addClass('loading');
                 },
                 success: function(data) {
+                    $_form.closest('.accordion-painel').removeClass('show').find('.accordion-content').fadeOut();
+                    $_form.closest('.accordion-painel').find('.accordion-content');
                     toastr.success('Informação salva com sucesso');
+                    $('#'.__next).addClass('show').fadeIn()
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     toastr.error('Houve um erro ao tentar salvar');

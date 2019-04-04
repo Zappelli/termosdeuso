@@ -1,5 +1,5 @@
 <div class="inner">
-    <form role="form" class='form form-contrato' method='post'  action="{{ $action }}">
+    <form role="form" class='form form-contrato' method='post'  action="{{ $action }}"  data-next="step-quem">
         {{ csrf_field() }}
         <input type='hidden' name="id" value='{{ 0 }}'>
         <input type='hidden' name="type" value='inicio'>
@@ -140,7 +140,7 @@
         </div> 
         <div class='row'>
             <div class='col-md-3 pull-right'>
-                <button type='submit' class='btn btn-primary'>Salvar Alterações</button>
+                <button type='submit' class='btn btn-primary'>Salvar e Continuar</button>
             </div>
         </div>
     </form>

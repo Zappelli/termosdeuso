@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
 /*!
- * Bootstrap v3.4.0 (https://getbootstrap.com/)
- * Copyright 2011-2018 Twitter, Inc.
+ * Bootstrap v3.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -8401,7 +8401,7 @@ button.close {
 .form-control {
   border-radius: 16px;
   line-height: 32px;
-  border-top: 1px solid #444;
+  border: 1px solid #dee2e6;
 }
 
 .form-control:focus {
@@ -8477,19 +8477,31 @@ button.close {
           box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, 0.1);
   border: solid 1px #eff1f9;
   border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #dee2e6;
 }
 
 .accordion-header {
   text-align: center;
   color: #636b6f;
   text-transform: uppercase;
-  border-radius: 18px;
   font-weight: bold;
   font-size: 18px;
   line-height: 36px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-color: #e7e9ea;
+}
+
+.accordion-header > .arrow {
+  padding-right: 15px;
+  font-style: normal;
+  float: right;
+}
+
+.accordion-header > .arrow i {
+  font-style: normal;
 }
 
 .accordion-content {
