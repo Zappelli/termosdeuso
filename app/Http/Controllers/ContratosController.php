@@ -124,6 +124,7 @@ class ContratosController extends Controller {
 	public function destroy($id)
 	{
 		$contrato = Contrato::find($id);
+		
 		if ($contrato->delete()) {
 			return Response::json(array('success' => true, 'msg' => $msg), 200);
 		}else{
