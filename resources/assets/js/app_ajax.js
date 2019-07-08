@@ -27,7 +27,7 @@ var AJAX = AJAX || {};
                     $_form.closest('.accordion-painel').removeClass('show').find('.accordion-content').fadeOut();
                     $_form.closest('.accordion-painel').find('.accordion-content');
                     toastr.success('Informação salva com sucesso');
-                    $('#'+__next).addClass('show').fadeIn()
+                    $('#'+__next).find('.accordion-content').addClass('show').fadeIn();
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     toastr.error('Houve um erro ao tentar salvar');
